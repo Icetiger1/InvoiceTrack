@@ -15,7 +15,7 @@ namespace InvoiceTrack.Controllers
         public ActionResult Register()
         {
             // Логика регистрации пользователя
-            // ...
+
 
             return View();
         }
@@ -24,7 +24,7 @@ namespace InvoiceTrack.Controllers
         public ActionResult Login()
         {
             // Логика аутентификации и авторизации пользователя
-            // ...
+
 
             return View();
         }
