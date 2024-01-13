@@ -1,16 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using InvoiceTrack.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace InvoiceTrack.Controllers
 {
-    public class InvoiceController : Controller
+    public class InvoiceController : GenericController<Invoice>
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public InvoiceController() : base(_dataSource) { }
+
 
         // Действие для создания счета-фактуры
-        public ActionResult CreateInvoice()
+        public async Task<IActionResult> CreateInvoice()
         {
             // Логика создания счета-фактуры
             // ...
@@ -19,7 +18,7 @@ namespace InvoiceTrack.Controllers
         }
 
         // Действие для отправки счета-фактуры
-        public ActionResult SendInvoice(int invoiceId)
+        public async Task<IActionResult> SendInvoice(int invoiceId)
         {
             // Логика отправки счета-фактуры клиенту
             // ...
@@ -28,7 +27,7 @@ namespace InvoiceTrack.Controllers
         }
 
         // Действие для отметки оплаченного счета-фактуры
-        public ActionResult MarkPaid(int invoiceId)
+        public async Task<IActionResult> MarkPaid(int invoiceId)
         {
             // Логика отметки счета-фактуры как оплаченного
             // ...

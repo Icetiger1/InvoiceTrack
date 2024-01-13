@@ -1,39 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using InvoiceTrack.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace InvoiceTrack.Controllers
 {
-    public class ClientController : Controller
+    public class ClientController : GenericController<Client>
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public ClientController() : base(_dataSource) { }
 
-        // Действие для добавления клиента
-        public ActionResult AddClient()
-        {
-            // Логика добавления клиента в базу данных
-            // ...
-
-            return View();
-        }
-
-        // Действие для редактирования клиента
-        public ActionResult EditClient(int clientId)
-        {
-            // Логика редактирования клиента в базе данных
-            // ...
-
-            return View();
-        }
-
-        // Действие для удаления клиента
-        public ActionResult DeleteClient(int clientId)
-        {
-            // Логика удаления клиента из базы данных
-            // ...
-
-            return View();
-        }
     }
 }

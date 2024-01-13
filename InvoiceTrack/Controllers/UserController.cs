@@ -1,18 +1,15 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using InvoiceTrack.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InvoiceTrack.Controllers
 {
-    public class UserController : Controller
+    public class UserController : GenericController<User>
     {
-        // GET: UserController
-        public ActionResult Index()
-        {
-            return View();
-        }
+        public UserController() : base(_dataSource) { }
 
         // Действие для регистрации пользователя
-        public ActionResult Register()
+        public async Task<IActionResult> Register()
         {
             // Логика регистрации пользователя
 
@@ -21,7 +18,7 @@ namespace InvoiceTrack.Controllers
         }
 
         // Действие для входа в систему
-        public ActionResult Login()
+        public async Task<IActionResult> Login()
         {
             // Логика аутентификации и авторизации пользователя
 
